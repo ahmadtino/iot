@@ -7,7 +7,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
-var port = 3000;
+var port = 3000 || process.env.PORT;
 
 var command = 2;
 var sensor;
