@@ -22,7 +22,7 @@ app.post('/sensorreading', function(req, res){
 });
 
 app.get('/sensorreading', function(req, res){
-    res.send(sensor);
+    res.json({sensor});
 });
 
 app.post('/ledcontrol', function(req, res){
