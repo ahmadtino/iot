@@ -15,20 +15,20 @@ var sensor;
 app.post('/sensorreading', function(req, res){
     sensor = req.body.sensor;
     console.log(sensor);
-    res.json({
+    res.status(200).json({
         message: 'Success',
         command
     })
 });
 
 app.get('/sensorreading', function(req, res){
-    res.json({sensor});
+    res.status(200).json({sensor});
 });
 
 app.post('/ledcontrol', function(req, res){
     command = req.body.command;
     console.log(command);
-    res.send("Success");
+    res.status(200).send("Success");
 });
 
 app.listen(port, function () {
