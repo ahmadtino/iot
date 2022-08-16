@@ -7,7 +7,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
-var port = process.env.PORT || 3000;
+var port = 3000;
 
 var command = 2;
 var sensor;
@@ -15,6 +15,10 @@ var sensor;
 app.post('/sensorreading', function(req, res){
     sensor = req.body.sensor;
     console.log(sensor);
+    res.json({
+        message: 'Success',
+        command
+    })
 });
 
 app.get('/sensorreading', function(req, res){
@@ -23,11 +27,8 @@ app.get('/sensorreading', function(req, res){
 
 app.post('/ledcontrol', function(req, res){
     command = req.body.command;
+    console.log(command);
     res.send("Success");
-});
-
-app.get('/ledcontrol', function(req, res){
-    res.send(command.toString());
 });
 
 app.listen(port, function () {
