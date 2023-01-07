@@ -10,7 +10,7 @@ app.use(express.json());
 var port = process.env.PORT || 3000;
 
 var command = 2;
-var sensor;
+var sensor = 300;
 
 app.post('/sensorreading', function(req, res){
     sensor = req.body.sensor;
